@@ -1,0 +1,88 @@
+
+
+body {
+    background-color: #2F2FA2;
+}
+
+h2 {
+    color: white;
+    font-family: 'Lucida Console';
+}
+
+p {
+    color: white;
+    font-family: 'Lucida Console';
+}
+
+img {
+    width: 100%;
+    height: 300px;
+}
+
+.btn {
+    background-color: #F64C72;
+    margin: auto 5px;
+    padding: 7px 20px;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Lucida Console';
+}
+
+.start-btn {
+    background-color: #F64C72;
+    margin: auto auto;
+    padding: 7px 20px;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Lucida Console';
+}
+
+.container {
+    margin: auto auto;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.select-container {
+    margin: auto auto;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+.home {
+    color: white;
+    font-family: 'Lucida Console';
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    background-color: #2F2FA2;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.submit {
+    background-color: #F64C72;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Lucida Console';
+    padding: 7px 20px;
+}
+
+.txt {
+    height: 150px;
+    border-radius: 5px;
+}
