@@ -12,14 +12,14 @@ import './App.css';
 const App = () => {
     return (
         <BrowserRouter>
-            <div>
+            <>
                 <Navbar />
                 <Switch>
                     <Route path="/" exact component={Home} /> 
                     <Route path="/select" exact component={Select} />
                     <Route path="/write" exact component={Write} />
                 </Switch>
-            </div>
+            </>
         </BrowserRouter>
     );
 };

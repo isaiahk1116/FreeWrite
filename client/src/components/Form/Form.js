@@ -20,14 +20,14 @@ const Form = () => {
     return(
         <form className="form" onSubmit={handleSubmit}>
             <textarea
-                className="txt"
+                className="input"
                 name="message"
                 label="message"
                 value={writing.message}
                 onChange={(e) => setWriting({ ...writing, message: e.target.value})}
             >
             </textarea>
-            <button className="submit" type="submit">Submit</button>
+            <button className="submit-btn" type="submit">Submit</button>
         </form>
     );
 };

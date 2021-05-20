@@ -1,15 +1,14 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const Home = () => {
+    const { push } = useHistory();
 
     return (
         <div className="container">
             <h2>Welcome to FreeWrite!</h2>
-            <Link to="/select">
-                <button className="start-btn">Let's get started</button>
-            </Link>
+            <button className="option-btn" onClick={() => push('/select')}>Let's get started</button>
         </div>
     );
 };
