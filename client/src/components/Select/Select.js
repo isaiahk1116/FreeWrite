@@ -6,10 +6,10 @@ const Select = () => {
     const { push } = useHistory();
 
     return (
-        <div className="container">
-            <h2>Select one of the following to begin:</h2>
+        <>
+            <h3>Select one of the following to begin:</h3>
             <button className="option-btn"onClick={() => push('/write')}>Focused</button>
-        </div>
+        </>
     );
 };
 

@@ -42,8 +42,8 @@ const Timer = ({ timesUp, setTimesUp }) => {
     return (
         <div className="timer">
             {!timesUp ? 
-                <><h2 className="time">{minutes}:{Math.floor(seconds/10)}{seconds%10}</h2>
-                <button className="write-btn" onClick={handleClick}>{pause ? "Start" : "Pause"}</button></> :
+                <><h2>{minutes}:{Math.floor(seconds/10)}{seconds%10}</h2>
+                <button className="timer-btn" onClick={handleClick}>{pause ? "Start" : "Pause"}</button></> :
                 <h2>Times Up!</h2>}
         </div>
     );
