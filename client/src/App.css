@@ -36,6 +36,15 @@ h2 {
     cursor: pointer;
 }
 
+.write-btn {
+    background-color: white;
+    color: black;
+    padding: 7px 20px;
+    border-radius: 5px;
+    font-family: 'Lucida Console';
+    cursor: pointer;
+}
+
 .container {
     display: flex;
     flex-direction: column;
