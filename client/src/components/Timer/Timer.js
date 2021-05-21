@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const Timer = () => {
+const Timer = ({ timesUp, setTimesUp }) => {
     const [seconds, setSeconds] = useState(0);
     const [minutes, setMinutes] = useState(0);
     const [pause, setPause] = useState(true);
@@ -28,19 +28,23 @@ const Timer = () => {
     }, []);
 
     useEffect(() => {
-        if (seconds === 599) {
+        if (minutes === 9 && seconds > 59) {
+            setTimesUp(true);
             return () => clearInterval(intervalRef.current);
         }
 
         if (seconds !== 0 && seconds % 60 === 0) {
             setMinutes((prev) => prev + 1);
+            setSeconds(0);
         }
-    }, [seconds])
+    }, [seconds, minutes, setTimesUp])
 
     return (
         <div className="timer">
-            <h2 className="time">{minutes}:{seconds%60}</h2>
-            <button onClick={handleClick}>{pause ? "Start" : "Pause"}</button>
+            {!timesUp ? 
+                <><h2>{minutes}:{Math.floor(seconds/10)}{seconds%10}</h2>
+                <button className="timer-btn" onClick={handleClick}>{pause ? "Start" : "Pause"}</button></> :
+                <h2>Times Up!</h2>}
         </div>
     );
 };

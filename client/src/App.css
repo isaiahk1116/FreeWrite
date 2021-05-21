@@ -1,53 +1,67 @@
 body {
-    background-color: #2F2FA2;
+    background-color: #222831;
+    font-family: 'Lucida Console';
+    text-align: center;
 }
 
 h2 {
-    color: white;
+    color: #ececec;
+    font-size: 35px;
+}
+
+h3 {
+    color: #ececec;
+}
+
+p {
+    color: #ececec;
+    font-size: 15px;
+}
+
+button {
     font-family: 'Lucida Console';
+    border-radius: 5px;
+    padding: 7px 20px;
+    cursor: pointer;
+}
+
+.generate-btn {
+    background-color: #30475e;
+    color: #ececec;
 }
 
 .login-btn {
-    background-color: #F64C72;
-    color: white;
+    background-color: #f2a365;
+    color: #30475e;
     margin: auto 5px;
-    padding: 7px 20px;
-    border-radius: 5px;
-    font-family: 'Lucida Console';
-    cursor: pointer;
 }
 
 .option-btn {
-    background-color: #F64C72;
-    color: white;
+    background-color: #ececec;
+    color: #30475e;
     margin: auto auto;
-    padding: 7px 20px;
-    border-radius: 5px;
-    font-family: 'Lucida Console';
-    cursor: pointer;
 }
 
 .submit-btn {
-    background-color: #F64C72;
-    color: white;
-    padding: 7px 20px;
-    border-radius: 5px;
-    font-family: 'Lucida Console';
-    cursor: pointer;
+    background-color: #f2a365;
+    color: #30475e;
 }
 
-.container {
+.timer-btn {
+    background-color: #ececec;
+    color: #30475e;
+}
+
+.write-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    margin: auto auto;
-    padding: 50px;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+    height: 75vh;
 }
 
 .homelink {
-    color: white;
-    font-family: 'Lucida Console';
+    color: #ececec;
     text-decoration: none;
     font-size: 30px;
 }
@@ -57,27 +71,18 @@ h2 {
     flex-direction: column;
     justify-content: center;
     width: 50%;
-    height: 100%;
 }
 
 .navbar {
-    background-color: #2F2FA2;
     display: flex;
     justify-content: space-between;
     padding: 0 10px;
+    margin-bottom: 50px;
 }
 
 .input {
-    height: 450px;
+    height: 75%;
     border-radius: 5px;
-}
-
-.write-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 50px;
-    height: 100%;
 }
 
 .timer {
@@ -87,7 +92,6 @@ h2 {
     width: 25%;
 }
 
-.time {
-    display: flex;
-    justify-content: center;
+#inner {
+    color: #f2a365;
 }
