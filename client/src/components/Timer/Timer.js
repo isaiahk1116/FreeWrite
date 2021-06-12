@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const Timer = ({ timesUp, setTimesUp }) => {
+const Timer = ({ pause, setPause }) => {
     const [seconds, setSeconds] = useState(0);
     const [minutes, setMinutes] = useState(0);
-    const [pause, setPause] = useState(true);
+    const [timesUp, setTimesUp] = useState(false);
 
     const intervalRef = useRef();
 
@@ -11,6 +11,7 @@ const Timer = ({ timesUp, setTimesUp }) => {
         setSeconds((prev) => prev + 1);
     };
 
+    // Handles switch for pause button
     const handleClick = () => {
         if (!pause) {
             clearInterval(intervalRef.current);
@@ -21,12 +22,15 @@ const Timer = ({ timesUp, setTimesUp }) => {
         setPause((prev) => !prev);
     };
 
+    // Resets timer when component is mounted
     useEffect(() => {
         setPause(true);
 
         return () => clearInterval(intervalRef.current);
-    }, []);
+        // eslint-disable-next-line
+    }, []); 
 
+    // Keeps track of minutes and seconds until time is up
     useEffect(() => {
         if (minutes === 9 && seconds > 59) {
             setTimesUp(true);
@@ -42,9 +46,12 @@ const Timer = ({ timesUp, setTimesUp }) => {
     return (
         <div className="timer">
             {!timesUp ? 
-                <><h2>{minutes}:{Math.floor(seconds/10)}{seconds%10}</h2>
-                <button className="timer-btn" onClick={handleClick}>{pause ? "Start" : "Pause"}</button></> :
-                <h2>Times Up!</h2>}
+                <>
+                    <h2>{minutes}:{Math.floor(seconds/10)}{seconds%10}</h2>
+                    <button className="timer-btn" onClick={handleClick}>{pause ? "Start" : "Pause"}</button>
+                </> :
+                <h2>Times Up!</h2>
+            }
         </div>
     );
 };

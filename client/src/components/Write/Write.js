@@ -1,17 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+
+import { WritingContext } from '../../context/WritingContext';
 
 import Form from '../Form/Form';
 import Timer from '../Timer/Timer';
 
 const Write = () => {
-    const [timesUp, setTimesUp] = useState(false);
     const [activePrompt, setActivePrompt] = useState(false);
-    const [currentPrompt, setCurrentPrompt] = useState("");
+
+    const { prompt } = useContext(WritingContext);
+    const { pause } = useContext(WritingContext);
+
+    const [promptValue, setPromptValue] = prompt;
+    const [pauseValue, setPauseValue] = pause;
 
     const prompts = [
         "What are your goals?",
         "If you could do anything for work, what would you do?",
         "You've discovered a new planet, what do you see?",
+        "Write about a time you failed.",
+        "If you could travel back in time, where would you go?",
+        "Turn the last song you listened to into a story.",
+        "Write about your biggest fear"
     ];
 
     const handleClick = () => {
@@ -19,16 +29,16 @@ const Write = () => {
 
         let randomNumber = Math.floor(Math.random() * prompts.length);
 
-        setCurrentPrompt(prompts[randomNumber]);
+        setPromptValue(prompts[randomNumber]);
     };
 
     return (
         <>
-            <h3>{activePrompt ? currentPrompt : ''}</h3>
+            <h3>{activePrompt ? promptValue : ''}</h3>
             <button className="generate-btn" onClick={handleClick}>Generate Prompt</button>
             <div className="write-container">
-                <Timer timesUp={timesUp} setTimesUp={setTimesUp} />
-                <Form timesUp={timesUp} />
+                <Timer pause={pauseValue} setPause={setPauseValue} />
+                <Form pause={pauseValue} />
             </div>
         </>
     );
