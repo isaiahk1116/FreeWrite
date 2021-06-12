@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { createWriting } from '../../api/index';
 
-const Form = ({ timesUp }) => {
+const Form = ({ pause }) => {
     const [writing, setWriting] = useState({ message: '', creator: 'defauit' });
+
+    const { push } = useHistory();
 
     const clear = () => {
         setWriting({ message: '' });
-    }
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -15,7 +18,9 @@ const Form = ({ timesUp }) => {
         createWriting(writing);
 
         clear();
-    }
+
+        push('/finished');
+    };
 
     return (
         <form className="form" onSubmit={handleSubmit}>
@@ -24,7 +29,7 @@ const Form = ({ timesUp }) => {
                 name="message"
                 label="message"
                 value={writing.message}
-                disabled={timesUp}
+                disabled={pause}
                 onChange={(e) => setWriting({ ...writing, message: e.target.value})}
             >
             </textarea>
