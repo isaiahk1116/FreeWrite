@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { createWriting } from '../../api/index';
-
 const Form = ({ pause }) => {
     const [writing, setWriting] = useState({ message: '', creator: 'defauit' });
 
@@ -14,8 +12,6 @@ const Form = ({ pause }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        createWriting(writing);
 
         clear();
 
